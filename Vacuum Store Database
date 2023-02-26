@@ -1,0 +1,22 @@
+CREATE TABLE Vacuums (ID INTEGER PRIMARY KEY, Model TEXT, Price INTEGER, Style TEXT, Color TEXT, Aisle INTEGER);
+
+INSERT INTO Vacuums VALUES(1, "Dyson V8 Absolute", "499", "Cordless", "Blue", "3");
+INSERT INTO Vacuums VALUES(2, "Dyson V10 Animal", "549", "Cordless", "Silver", "3");
+INSERT INTO Vacuums VALUES(3, "Dyson V11 Animal", "599", "Cordless", "Purple", "3");
+INSERT INTO Vacuums VALUES(4, "Dyson V12 Detect", "649", "Cordless", "Gold", "3");
+INSERT INTO Vacuums VALUES(5, "Dyson V15 Detect", "749", "Cordless", "Silver", "3");
+INSERT INTO Vacuums VALUES(6, "Dyson Outsize +", "949", "Cordless", "Red", "3");
+INSERT INTO Vacuums VALUES(7, "Dyson Animal 2 Total Clean", "599", "Upright", "Blue", "4");
+INSERT INTO Vacuums VALUES(8, "Dyson Animal 3 Extra", "499", "Upright", "Copper", "4");
+INSERT INTO Vacuums VALUES(9, "Dyson Animal 3 complete", "549", "Upright", "Gold", "4");
+INSERT INTO Vacuums VALUES(10, "Dyson Animal 2", "399", "Upright", "Blue", "4");
+INSERT INTO Vacuums VALUES(11, "Dyson MultiFloor Origin", "349", "Upright", "Fuchsia", "4");
+INSERT INTO Vacuums VALUES(12,"Dyson MultiFloor 2", "399", "Upright", "Blue", "4");
+INSERT INTO Vacuums VALUES(13, "Dyson Omni-Glide +", "499", "Hard Floor", "Gold", "6");
+INSERT INTO Vacuums VALUES(14, "Dyson Omni-Glide", "449", "Hard Floor", "Purple", "6");
+INSERT INTO Vacuums VALUES(15, "Dyson Big Ball MultiFloor", "399", "Canister", "Yellow", "6");
+
+
+SELECT * FROM Vacuums ORDER BY PRICE;
+SELECT MIN(PRICE) FROM Vacuums;
+SELECT * FROM Vacuums WHERE PRICE <= 499 ORDER BY Price asc;
