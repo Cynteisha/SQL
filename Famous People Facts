@@ -1,0 +1,32 @@
+#In this SQL, I'm querying a database with two tables in it to answer questions about the data.
+
+CREATE TABLE FamousPeople (id INTEGER PRIMARY KEY, Fullname TEXT, Sex TEXT, Age INTEGER);
+ 
+ INSERT INTO FamousPeople VALUES (1, "Beyonce Knowles", "Female", 42);
+ INSERT INTO FamousPeople VALUES (2, "Thomas Holland", "Male", 27);
+ INSERT INTO FamousPeople VALUES (3, "Bill Gates", "Male", 67);
+ INSERT INTO FamousPeople VALUES (4, "Taylor Swift", "Female", 33);
+ INSERT INTO FamousPeople VALUES (5, "Brad Pitt", "Male", 59);
+ 
+ CREATE TABLE FACTS (id INTEGER PRIMARY KEY, Occupation TEXT, Awards TEXT, Born TEXT);
+ 
+ INSERT INTO FACTS VALUES (1, "Singer", "Grammy", "Texas");
+ INSERT INTO FACTS VALUES (2, "Actor", "British Academy Film Award", "Surrey");
+ INSERT INTO FACTS VALUES (3, "Entrepreneur", "Jefferson Award", "Washington");
+ INSERT INTO FACTS VALUES (4, "Singer", "Grammy", "Pennysylvania");
+ INSERT INTO FACTS VALUES (5, "Actor", "Academy Award", "Oklahoma");
+
+--What's each person occupation?
+SELECT FamousPeople.fullname, Facts.occupation FROM FamousPeople JOIN FACTS ON FamousPeople.id=facts.id;
+
+--How many of the people in the table are singers?
+SELECT Facts.Occupation, FamousPeople.fullname FROM Facts JOIN FamousPeople ON Facts.id=FamousPeople.id WHERE Facts.Occupation="Singer";
+
+--Who was born in Oklahoma?
+SELECT Facts.Born, FamousPeople.fullname FROM Facts JOIN FamousPeople ON Facts.id=FamousPeople.id WHERE Facts.Born="Oklahoma";
+
+--Who won a Grammy?
+SELECT Facts.Awards, FamousPeople.Fullname FROM FACTS JOIN FamousPeople ON Facts.id=FamousPeople.id WHERE Facts.Awards="Grammy";
+
+--Who is above the age 35? 
+SELECT FamousPeople.Fullname, FamousPeople.Age FROM FamousPeople WHERE Age>35 order by age asc;
